@@ -1,0 +1,49 @@
+/* Horizontal Flexbox Masonry
+
+The first concept is to give all the masonry bricks or cells
+or flex container’s child items flex: auto. The children then
+will be sized according to their width and height properties,
+but will also grow to absorb any extra free space in the masonry,
+and shrink to their minimum sizes to fit the masonry.
+
+Since this is going to be a fancy masonry layout, we have to
+give each masonry brick an equal height to arrange all of them
+in a horizontal order.
+
+ */
+
+ .masonry {
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: -8px; /* Adjustment for the gutter */
+  width: 100%;
+}
+
+.masonry-brick {
+  flex: auto;
+  height: 250px;
+  min-width: 150px;
+  margin: 0 8px 8px 0; /* Some gutter */
+}
+
+
+/*
+
+We will also be giving different widths to the .masonry-brick
+items that will make the items arranged in a masonry fashion.
+
+ */
+
+
+ .masonry-brick:nth-child(4n+1) {
+  width: 250px;
+}
+.masonry-brick:nth-child(4n+1):nth-child(4n+2) {
+  width: 325px;
+}
+.masonry-brick:nth-child(4n+1):nth-child(4n+3) {
+  width: 180px;
+}
+.masonry-brick:nth-child(4n+1):nth-child(4n+4) {
+  width: 380px;
+}
